@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"context"
 	"io"
 	"os"
 
@@ -23,7 +24,7 @@ func CreateDecryptMessageCommand() *cobra.Command {
 	return commands.CreateTypedCommand(instance)
 }
 
-func (d *decryptMessageCommand) Execute() {
+func (d *decryptMessageCommand) Execute(_ context.Context) {
 	armored, _ := ReadArmoredMessagedFromStdin()
 	message, _ := crypto.NewPGPMessageFromArmored(armored)
 	decrypted, _ := crypto.DecryptMessageWithPassword(message, []byte(d.Passphrase))

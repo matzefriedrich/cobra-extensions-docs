@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"context"
 	"os"
 
 	"github.com/matzefriedrich/cobra-extensions/pkg/commands"
@@ -23,7 +24,7 @@ func CreateEncryptMessageCommand() *cobra.Command {
 	return commands.CreateTypedCommand(instance)
 }
 
-func (e *encryptMessageCommand) Execute() {
+func (e *encryptMessageCommand) Execute(_ context.Context) {
 
 	message := crypto.NewPlainMessageFromString(e.Message)
 	encrypted, _ := crypto.EncryptMessageWithPassword(message, []byte(e.Passphrase))

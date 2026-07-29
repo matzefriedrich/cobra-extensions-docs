@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"context"
 	"fmt"
 
 	"github.com/matzefriedrich/cobra-extensions/pkg/commands"
@@ -30,6 +31,6 @@ func CreateHelloCommand() *cobra.Command {
 	return commands.CreateTypedCommand(instance)
 }
 
-func (c *helloCommand) Execute() {
+func (c *helloCommand) Execute(_ context.Context) {
 	fmt.Printf("Hello %s.\n", c.Arguments.Name)
 }

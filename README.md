@@ -10,21 +10,50 @@ The examples serve as a reference for developers integrating `cobra-extensions` 
 
 ## Prerequisites
 
-* Go 1.24+
+* Go 1.26+
 
 ## Getting Started
 
-Clone the repository and navigate into any example to explore its functionality:
+Clone the repository and navigate into the project folder:
 
 ```bash
 git clone https://github.com/matzefriedrich/cobra-extensions-docs.git
 cd cobra-extensions-docs
-````
+```
+
+## Build and Development
+
+This project uses a `Makefile` to automate common tasks.
+
+### Available Commands
+
+List all available commands:
+```bash
+make help
+```
+
+| Command | Description |
+| --- | --- |
+| `make build` | Build all sample apps into the `build/` folder. |
+| `make install-tools` | Install required tools (e.g., `golangci-lint`) to a local `bin/` folder. |
+| `make lint-fix` | Run `golangci-lint` with the `--fix` flag. |
+| `make clean` | Remove the `bin/` and `build/` folders. |
 
 ## Run examples
 
-Each example has its own entry module. For instance, the following command builds and runs the `charmer` example app:
+The sample applications are located in the `cmd/` directory. After building, you can find the binaries in the `build/` folder.
 
-```sh
+### Charmer Example
+```bash
+./build/charmer --help
+```
+
+### Simple Example
+```bash
+./build/simple --help
+```
+
+Alternatively, you can run them directly using `go run`:
+```bash
 go run cmd/charmer/main.go --help
 ```

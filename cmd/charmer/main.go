@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 
 	"github.com/matzefriedrich/cobra-extensions-docs/examples/internal"
@@ -10,6 +11,8 @@ import (
 
 func main() {
 
+	ctx := context.Background()
+
 	err :=
 		charmer.NewCommandLineApplication("charmer-example", "A sample application to showcase the charmer package.").
 			AddCommand(internal.CreateHelloCommand()).
@@ -18,7 +21,7 @@ func main() {
 					internal.CreateEncryptMessageCommand(),
 					internal.CreateDecryptMessageCommand())
 			}).
-			Execute()
+			Execute(ctx)
 
 	if err != nil {
 		log.Fatal(err)
