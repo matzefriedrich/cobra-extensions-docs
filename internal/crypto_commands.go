@@ -7,8 +7,7 @@ import (
 )
 
 type cryptoCommand struct {
-	types.BaseCommand
-	use types.CommandName `flag:"crypt" short:"Provides commands to encrypt and decrypt messages." long:"The command group offers tools for securely encrypting messages and decrypting them with a provided passphrase. Use these commands to ensure message confidentiality and safe data transmission."`
+	types.BaseCommand `cobra-x:"crypt, help='Provides commands to encrypt and decrypt messages.', description='The command group offers tools for securely encrypting messages and decrypting them with a provided passphrase. Use these commands to ensure message confidentiality and safe data transmission.'"`
 }
 
 // CreateCryptCommand initializes a new cobra.Command, providing sub-commands for encrypting and decrypting messages.

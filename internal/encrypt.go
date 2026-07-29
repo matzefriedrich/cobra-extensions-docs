@@ -15,8 +15,8 @@ var _ types.TypedCommand = &encryptMessageCommand{}
 
 type encryptMessageCommand struct {
 	cryptCommand
-	use     types.CommandName `flag:"encrypt" short:"Encrypt a message." long:"Encrypt a message and protects it with a passphrase."`
-	Message string            `flag:"message" usage:"The message to encrypt."`
+	types.BaseCommand `cobra-x:"encrypt, help='Encrypt a message.', description='Encrypt a message and protects it with a passphrase.'"`
+	Message           string `cobra-x:"-m|--message, help='The message to encrypt.'"`
 }
 
 func CreateEncryptMessageCommand() *cobra.Command {

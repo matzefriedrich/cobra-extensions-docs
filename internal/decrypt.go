@@ -16,7 +16,7 @@ var _ types.TypedCommand = &decryptMessageCommand{}
 
 type decryptMessageCommand struct {
 	cryptCommand
-	use types.CommandName `flag:"decrypt" short:"Decrypt a message." long:"Reads an armored message from stdin and decrypts it."`
+	types.BaseCommand `cobra-x:"decrypt, help='Decrypt a message.', description='Reads an armored message from stdin and decrypts it.'"`
 }
 
 func CreateDecryptMessageCommand() *cobra.Command {

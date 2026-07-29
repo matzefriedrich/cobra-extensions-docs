@@ -12,8 +12,8 @@ import (
 )
 
 type helloCommand struct {
-	use       types.CommandName `flag:"hello" short:"Prints a greeting to the specified name."`
-	Arguments helloArgs
+	types.BaseCommand `cobra-x:"hello, help='Prints a greeting to the specified name.'"`
+	Arguments         helloArgs
 }
 
 var _ types.TypedCommand = (*helloCommand)(nil)
