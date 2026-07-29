@@ -1,4 +1,3 @@
-[![Go Report Card](https://goreportcard.com/badge/github.com/matzefriedrich/cobra-extensions-docs)](https://goreportcard.com/report/github.com/matzefriedrich/cobra-extensions-docs)
 ![License](https://img.shields.io/github/license/matzefriedrich/cobra-extensions-docs)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/matzefriedrich/cobra-extensions-docs)
 
